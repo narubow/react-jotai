@@ -20,7 +20,6 @@ function App() {
         </a>
       </header>
       <p>iiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-      <p>eeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
     </div>
   );
 }
