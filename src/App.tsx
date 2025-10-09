@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { FormPrivate } from './components/form/formPrivate/formPrivate';
+import { RUrl } from './lib/url';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path={RUrl} element={<FormPrivate />} />
+          <Route path={`${RUrl}/form/private`} element={<FormPrivate />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
