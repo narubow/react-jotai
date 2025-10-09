@@ -11,11 +11,9 @@ export const FormPrivate: React.FC = () => {
     lastName: z.string().min(1, '姓は必須です').max(30, '姓は30文字以内で入力してください'),
     telNumber: z.string().regex(/^0\d{9,10}$/, "電話番号は日本番号で10桁または11桁で入力してください。"),
     emailTxt: z.string()
-    .min(4, 'Eメールは有効なメールアドレスで入力してください。')
-    .max(100, 'Eメールは有効なメールアドレスで入力してください。')
-    .refine((email) => email.includes('@'), 'Eメールは有効なメールアドレスで入力してください。')
-    .refine((email) => email.includes('.'), 'Eメールは有効なメールアドレスで入力してください。')
-    .regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Eメールは有効なメールアドレスで入力してください。')
+      .min(4, 'Eメールは必須です')
+      .max(100, 'Eメールは100文字以内で入力してください')
+      .regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Eメールは有効なメールアドレスで入力してください')
   });
 
   type FormData = z.infer<typeof formValidate>;
